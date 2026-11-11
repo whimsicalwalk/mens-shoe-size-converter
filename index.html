@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Men's Shoe Size Converter – UK, EU, US & cm | Whimsical Walk</title>
+<meta name="description" content="Free men's shoe size converter. Convert between UK, EU and US shoe sizes and foot length in centimetres, with a full size chart.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#efe6d6; --card:#f8f2e8; --ink:#2a1614; --mute:#6e5646; --accent:#3a1618;
+  --brass:#a8813f; --line:#d8c8ae; --field:#fffaf2;
+}
+@media (prefers-color-scheme: dark){
+  :root{ color-scheme:dark;
+    --bg:#1d0d0e; --card:#2b1416; --ink:#efe6d6; --mute:#c9b79b; --accent:#efe6d6;
+    --brass:#c4a468; --line:#4a2a2b; --field:#231012; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Jost,system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:40px 20px 60px}
+.card{background:var(--card);border:1px dashed var(--brass);outline:6px solid var(--card);
+  box-shadow:0 0 0 7px var(--line);padding:40px 32px;margin-top:10px}
+.brand{font:500 14px Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin:0}
+h1{font:600 clamp(36px,6vw,54px)/1.05 "Cormorant Garamond",Georgia,serif;margin:10px 0 8px;color:var(--accent)}
+.lead{color:var(--mute);margin:0 0 28px;max-width:56ch}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-weight:500;font-size:14px;margin-bottom:6px;color:var(--mute)}
+select,input{width:100%;font:inherit;color:var(--ink);background:var(--field);border:1px solid var(--line);
+  border-radius:6px;padding:12px 14px}
+select:focus,input:focus{outline:2px solid var(--brass);outline-offset:1px}
+.results{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.res{border:1px solid var(--line);border-radius:6px;padding:14px;text-align:center;background:var(--field)}
+.res span{display:block;font-size:13px;letter-spacing:.12em;color:var(--mute);text-transform:uppercase}
+.res b{font:600 34px "Cormorant Garamond",Georgia,serif;color:var(--accent)}
+.note{font-size:14px;color:var(--mute);min-height:1.6em;margin:12px 0 0}
+h2{font:600 30px "Cormorant Garamond",Georgia,serif;margin:44px 0 12px;color:var(--accent)}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:9px 10px;text-align:center;border-bottom:1px solid var(--line)}
+th{font-weight:500;color:var(--mute);letter-spacing:.08em;font-size:13px;text-transform:uppercase}
+tr.hit td{background:color-mix(in srgb,var(--brass) 22%,transparent);font-weight:500}
+.tips p{margin:0 0 10px;color:var(--ink)}
+a{color:var(--brass)}
+footer{margin-top:36px;font-size:14px;color:var(--mute);text-align:center}
+@media (max-width:600px){.row{grid-template-columns:1fr}.results{grid-template-columns:repeat(2,1fr)}.card{padding:28px 18px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="card">
+    <p class="brand">Whimsical Walk</p>
+    <h1>Men's Shoe Size Converter</h1>
+    <p class="lead">Convert men's shoe sizes between UK, EU and US, or find your size from your foot length in centimetres.</p>
+
+    <div class="row">
+      <div>
+        <label for="system">I know my size in</label>
+        <select id="system">
+          <option value="uk">UK</option><option value="eu">EU</option>
+          <option value="us">US</option><option value="cm">Foot length (cm)</option>
+        </select>
+      </div>
+      <div>
+        <label for="size">Size</label>
+        <input id="size" type="number" step="0.1" value="9" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="results" aria-live="polite">
+      <div class="res"><span>UK</span><b id="r-uk">–</b></div>
+      <div class="res"><span>EU</span><b id="r-eu">–</b></div>
+      <div class="res"><span>US</span><b id="r-us">–</b></div>
+      <div class="res"><span>cm</span><b id="r-cm">–</b></div>
+    </div>
+    <p class="note" id="note"></p>
+
+    <h2>Size chart</h2>
+    <div class="tablewrap"><table id="chart"><thead><tr><th>UK</th><th>EU</th><th>US</th><th>Foot length (cm)</th></tr></thead><tbody></tbody></table></div>
+
+    <h2>Tips for the right fit</h2>
+    <div class="tips">
+      <p>Measure your feet in the evening, when they are at their largest, from the back of the heel to the tip of the longest toe.</p>
+      <p>If you are between sizes, consider the width of your foot and the style of shoe: loafers usually fit closer than lace-ups.</p>
+      <p>Sizing varies between brands and lasts, so treat this chart as a guide and check the brand's own size guide before ordering. For Whimsical Walk shoes, see our <a href="https://whimsicalwalk.com/pages/size-guide-1">size guide</a>.</p>
+    </div>
+  </div>
+  <footer>Open-source tool by <a href="https://whimsicalwalk.com/">Whimsical Walk</a>, makers of hand-welted men's leather shoes · <a href="https://github.com/whimsicalwalk/shoe-size-converter">Source on GitHub</a></footer>
+</main>
+<script src="shoe-size.js"></script>
+<script>
+(function(){
+  var sys=document.getElementById("system"), size=document.getElementById("size"), note=document.getElementById("note");
+  var tbody=document.querySelector("#chart tbody");
+  var rows=ShoeSize.chart().map(function(r){
+    var tr=document.createElement("tr");
+    tr.innerHTML="<td>"+r.uk+"</td><td>"+r.eu+"</td><td>"+r.us+"</td><td>"+r.cm.toFixed(1)+"</td>";
+    tbody.appendChild(tr); return {r:r,tr:tr};
+  });
+  function update(){
+    var v=size.value, s=sys.value;
+    if(v===""||isNaN(Number(v))){ ["uk","eu","us","cm"].forEach(function(k){document.getElementById("r-"+k).textContent="–"}); note.textContent=""; return; }
+    var res=ShoeSize.lookup(v,s);
+    ["uk","eu","us"].forEach(function(k){document.getElementById("r-"+k).textContent=res[k]});
+    document.getElementById("r-cm").textContent=res.cm.toFixed(1);
+    note.textContent = res.outOfRange ? "That size is outside this chart, so the nearest size is shown."
+      : (res.exact ? "" : "Showing the nearest size on the chart.");
+    rows.forEach(function(o){ o.tr.classList.toggle("hit", o.r.uk===res.uk); });
+  }
+  sys.addEventListener("change",update); size.addEventListener("input",update); update();
+})();
+</script>
+</body>
+</html>
