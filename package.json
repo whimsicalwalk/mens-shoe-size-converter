@@ -1,0 +1,14 @@
+{
+  "name": "mens-shoe-size-converter",
+  "version": "1.0.0",
+  "description": "Convert men's shoe sizes between UK, EU, US and foot length (cm). Tiny, no dependencies, works in Node and the browser.",
+  "main": "shoe-size.js",
+  "files": ["shoe-size.js"],
+  "scripts": { "test": "node test/test.js" },
+  "keywords": ["shoe size", "shoe size converter", "uk eu us", "mens shoes", "size chart", "foot length"],
+  "homepage": "https://whimsicalwalk.com/pages/size-guide-1",
+  "repository": { "type": "git", "url": "git+https://github.com/whimsicalwalk/mens-shoe-size-converter.git" },
+  "bugs": { "url": "https://github.com/whimsicalwalk/mens-shoe-size-converter/issues" },
+  "author": "Whimsical Walk (https://whimsicalwalk.com/)",
+  "license": "MIT"
+}
